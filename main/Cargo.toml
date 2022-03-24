@@ -1,0 +1,16 @@
+[package]
+name = "main"
+version = "0.1.0"
+authors = ["Quake Wang <quake.wang@gmail.com>"]
+edition = "2021"
+
+[profile.release]
+panic = "abort"
+debug = true
+# lto = true
+
+[dependencies]
+foo = {path="../foo"}
+
+[features]
+inline-unpack = ["foo/inline-unpack"]
