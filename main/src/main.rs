@@ -1,5 +1,7 @@
 pub fn main() {
-    let b = foo::Byte32(&[0; 32]);
-    let a = b.unpack();
-    std::process::exit(a.len() as i32);
+    let input = foo::input();
+    let result = foo::Byte32(&input).unpack();
+    foo::output(&result);
+    let result = foo::Byte32(&input).unpack_noninline();
+    foo::output(&result);
 }
